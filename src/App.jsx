@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 
 const App = () => {
-  const info = (info) => {
-    return info;
+  const [info, setInfo] = useState('Yash');
+  const changeInfo = () => {
+    setInfo('Yash rajput');
   }
 
   return (
     <div className='flex justify-center items-center h-screen'>
-      <button className='border border-zinc-500 rounded-md p-2 px-4 py-2' onClick={() => info('Yash')}>Click me</button>
-      <h1>{()=>info('Yash')}</h1>
+      <h1>{info}</h1>
+      <button className='border border-zinc-500 rounded-md p-2 px-4 py-2' onClick={changeInfo}>Click me</button>
     </div>
   )
 }
